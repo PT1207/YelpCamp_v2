@@ -1,0 +1,34 @@
+<%-include("../partials/header.ejs") %>
+<div class="container">
+	<div class="row">
+		<div class="col-md-4">
+			<div class="card" style="width: 50%; text-align: center;">
+			<img class="card-img-top rounded" src="<%=user.avatar%>" alt="user profile image" >
+			</div>
+			<div class="card-body pl-0">
+				<h5 style="margin-bottom: 25px;"><%=user.firstName %> <%=user.lastName %></h5>
+			
+				<a href="#"><strong>Email:</strong> <%=user.email%></a> 
+			</div>
+				
+		 </div>
+		<div class="col-md-8">
+			<h3>
+				<%= user.username %>'s campgrounds: 
+			</h3>
+		<% campgrounds.forEach(function(campground){ %>
+			<ul>
+			<li><a id="namehid" href="/campgrounds/<%=campground._id%>"><span><%=campground.name %></span></a></li>
+			</ul>
+		<%	}); %>
+				
+		</div>
+		
+	 </div> 
+
+	
+</div>
+
+
+
+<%-include("../partials/footer.ejs") %>

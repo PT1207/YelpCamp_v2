@@ -1,0 +1,44 @@
+<%-include("../partials/header.ejs") %>
+
+<div class="container">
+        <h1 style="text-align: center; margin-top: 2rem;">Edit <%= campground.name%> </h1>
+    <div class="row">
+        <div style="width:30%; margin:30px auto;">
+                <form action="/campgrounds/<%= campground._id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+                    <div class="form-group">
+						<label for="campname">Campground Name:</label>
+                        <input class="form-control" autofocus required id="campname" type = "text" name="campground[name]" value="<%=campground.name %>">
+                    </div>
+                    <div class="form-group">
+						<label for="image">Image:</label>
+                        <input class="form-control" id="image" accept="image/*" type = "file" name="image">
+                    </div>
+                    <div class="form-group">
+						<label for="descripedit">Description:</label>
+                        <input class="form-control" id="descripedit" required type = "text" area-describeby="descam" name="campground[description]" value="<%=campground.description %>" maxlength="350">
+						<small id="descam" class="form-text text-muted">max 350 characters</small>
+                    </div>
+					<div class="form-group">
+						<label for="campprice">Price(per night):</label>
+                        <input class="form-control" required id="campprice" type = "number" name="campground[price]" value="<%=campground.price%>" min="0.01" step="0.01">
+                    </div>
+					<div class="form-group">
+						<label for="airportcity">Weather API:</label>
+                        <input class="form-control" required id="airportcity" type = "text" name="campground[city]" value="<%=campground.city%>" >
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-lg btn-primary btn-block"> Submit </button>
+                    </div>
+                     
+        </form>
+            <a href = "/campgrounds/<%=campground._id%>">Go Back</a>
+        </div>
+
+        
+        
+    </div>
+    
+
+</div>
+
+<%-include("../partials/footer.ejs") %>

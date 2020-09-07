@@ -1,0 +1,29 @@
+<%-include("../partials/header.ejs") %>
+
+<div class="container">
+        <h1 style="text-align: center; margin-top: 2rem;">Edit comment </h1>
+    <div class="row">
+        <div style="width:30%; margin:30px auto;">
+                <form action="/campgrounds/<%= campground_id %>/comments/<%= comment.id %>?_method=PUT" method="POST">
+                    <div class="form-group">
+                        <input class="form-control" required aria-describeby="commcamp" autofocus type = "text" name="comment[text]" value="<%= comment.text%>">
+						<small id="commcamp" class="form-text text-muted">max 150 characters</small>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-lg btn-primary btn-block"> Submit </button>
+                    </div>
+                     
+        </form>
+            <a href = "/campgrounds/<%=campground_id%>">Go Back</a>
+        </div>
+
+        
+        
+    </div>
+    
+
+</div>
+
+
+
+<%-include("../partials/footer.ejs") %>

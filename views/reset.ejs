@@ -1,0 +1,37 @@
+<%-include("./partials/header.ejs")%>
+<h1 style="margin-top: 2rem; text-align: center;">Password Reset</h1>
+
+
+<form style="width: 30%; margin:30px auto;" class="form-group" action="/reset/<%=token%>" method="POST">
+	<div class="form-group">
+		<label for="password">New Password:</label>
+	<input class="form-control" id="password"  autofocus="autofocus" type="password" placeholder="New Password" name="password" required>
+	</div>
+	
+	<div class="form-group">
+		<label for="password1">Confirm Password:</label>
+	<input class="form-control" id="password1" type="password" placeholder="Confirm Password" name="confirm" required>
+	</div>
+	
+	<div class="form-group">
+	<button type="submit" class="btn btn-primary form-control">
+		Reset Password
+	</button>
+		
+	</div>
+		
+	
+	
+</form>
+
+
+
+
+
+
+
+
+
+
+
+<%-include("./partials/footer.ejs")%>

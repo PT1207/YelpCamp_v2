@@ -1,0 +1,20 @@
+/* this is for TEXT TRANSFORMATIONS DONE TO A CERTAIN LINK*/
+#namehid:hover span {display:none;}
+#namehid:hover:before {content:"Visit campground!";letter-spacing: 2px;}
+		
+	#animabutt:hover span{display: none;}
+	#animabutt:hover:before  {content:"Share your experience!"}
+			
+	
+.delete-form {
+    display: inline;
+}
+.thumbnail img {
+    width:100%;
+}
+.thumbnail{
+    padding:0;
+}
+.thumbnail .caption-full{
+    padding:9px;
+}

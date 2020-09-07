@@ -1,0 +1,19 @@
+<%-include("./partials/header.ejs")%>
+<h1 style="margin-top: 2rem; text-align: center;">Reset Password</h1>
+
+
+<form style="width: 30%; margin:30px auto;" class="form-group" action="/forgot" method="POST">
+	<div class="form-group">
+		<label for="emailin">Your Email:</label>
+	<input class="form-control" id="emailin" aria-drescribeby="emaili2" autofocus type="email" placeholder="johnsmith@gmail.com" name="email" required>
+		<small id="emaili2" class="form-text text-muted">Has to be a @gmail.com email address!</small>
+	</div>
+	<div class="form-group">
+	<button type="submit" class="btn btn-primary form-control">
+		Reset Password
+	</button>
+		
+	</div>
+		
+</form>
+<%-include("./partials/footer.ejs")%>
