@@ -28,7 +28,7 @@ var authRoutes =require("./routes/index");
 
 //seedDB(); //seed the database
 
-var url=process.env.DATABASELOCALURL || process.env.DATABASEURL ;
+var url=process.env.DATABASEURL || process.env.DATABASELOCALURL ;
 
 mongoose.connect(url, {
   useNewUrlParser: true,
