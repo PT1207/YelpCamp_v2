@@ -1,4 +1,4 @@
-require("dotenv").config(); //for stripe payment-to save the secret key in a other file!!
+//require("dotenv").config(); //for stripe payment-to save the secret key in a other file!!
 var express                = require("express");
 var  app                   = express();
  var   bodyParser          = require("body-parser");
