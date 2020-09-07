@@ -78,7 +78,12 @@ function escapeRegex(text) {
 
 //POST REQUEST TO SUBMIT NEW CAMPGROUND DETAIL
 router.post("/", middleware.isLoggedIn, upload.single('image'), function(req, res) {
-    //my Weather Api Begins!
+    try{
+		
+	
+	} catch(error){
+		
+	}
 	
 	var city = req.body.campground.city;
 		axios({
@@ -117,7 +122,7 @@ router.post("/", middleware.isLoggedIn, upload.single('image'), function(req, re
     res.redirect('/campgrounds/' + campground.id);
   });
 	})
-.catch((err)=>{
+	.catch((err)=>{
 				console.log("Campgrounds route! Problems could be with the city ! (i'm in the catch err)");
 				req.flash("error","Such a city dosen't exist ! Please try again!")
 				res.redirect("back");
@@ -212,6 +217,9 @@ router.put("/:id", middleware.checkCampgroundOwnership, upload.single('image'), 
 				}	
 				}
 		// update and save !
+			
+			updatedCampground.city=req.body.campground.city;
+			updatedCampground.price=req.body.campground.price;
 			updatedCampground.name=req.body.campground.name;
 			updatedCampground.description=req.body.campground.description;
 			updatedCampground.save();
