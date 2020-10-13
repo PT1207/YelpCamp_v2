@@ -1,4 +1,4 @@
-/* this is for TEXT TRANSFORMATIONS DONE TO A CERTAIN LINK*/
+
 #namehid:hover span {display:none;}
 #namehid:hover:before {content:"Visit campground!";letter-spacing: 2px;}
 		
