@@ -1,4 +1,3 @@
-//require("dotenv").config();
 var express                = require("express");
 var  app                   = express();
  var   bodyParser          = require("body-parser");
@@ -26,7 +25,7 @@ var campgroundRoutes = require("./routes/campgrounds");
 var authRoutes =require("./routes/index");
 
 
-//seedDB(); //seed the database
+//seedDB();
 
 var url=process.env.DATABASEURL || process.env.DATABASELOCALURL ;
 
@@ -47,8 +46,7 @@ app.use(express.static( __dirname + "/public"));
 
 
 
-//PASSPORT CONFIGURATION
-app.use(require("express-session")({ //session configuration
+app.use(require("express-session")({ 
     secret: "Once again Rusty  wins cutest dog",
     resave: false,
     saveUninitialized: false
@@ -70,12 +68,6 @@ app.use( async function(req, res, next){
 app.use("/", authRoutes);
 app.use("/campgrounds", campgroundRoutes);
 app.use("/campgrounds/:id/comments", commentRoutes);
-
-
-
-
-
-
 
 
 
