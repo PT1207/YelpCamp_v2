@@ -76,7 +76,7 @@ function escapeRegex(text) {
 };
 
 
-//POST REQUEST TO SUBMIT NEW CAMPGROUND DETAIL
+
 router.post("/", middleware.isLoggedIn, upload.single('image'), function(req, res) {
     try{
 		
@@ -104,16 +104,14 @@ router.post("/", middleware.isLoggedIn, upload.single('image'), function(req, re
 	.then((response)=>{
 			
 	cloudinary.uploader.upload(req.file.path, function(result) {
-  // add cloudinary url for the image to the campground object under image property
   req.body.campground.image = result.secure_url;
-  // add to image a public id -changed some stuff in the model too 
-	req.body.campground.imageId=result.public_id;
-	 // add author to campground	
+req.body.campground.imageId=result.public_id;
+	
   req.body.campground.author = {
     id: req.user._id,
     username: req.user.username
   }
-	//Create a new campground and save to DB
+	
   Campground.create(req.body.campground , function(err, campground) {
     if (err) {
       req.flash('error', err.message);
@@ -130,12 +128,12 @@ router.post("/", middleware.isLoggedIn, upload.single('image'), function(req, re
 		});
 });
 
-//FORM FOR NEW CAMPGROUND
+
 router.get("/new", middleware.isLoggedIn, function(req, res) {
     res.render("campgrounds/new");
 })
 
-//SHOW MORE DETAILS OF CAMPGROUND WHEN CLICKED
+
 router.get("/:id", function(req, res) {
     Campground.findById(req.params.id).populate("comments likes").exec(function(err, foundCampground) {
         if (err || !foundCampground) {
@@ -185,7 +183,7 @@ router.get("/:id", function(req, res) {
     });
 });
 
-//EDIT CAMPGROUND ROUTEE
+
 router.get("/:id/edit", middleware.checkCampgroundOwnership, function(req, res){
     Campground.findById(req.params.id, function(err, foundCampground){
         if(err){
@@ -198,7 +196,7 @@ router.get("/:id/edit", middleware.checkCampgroundOwnership, function(req, res){
 });
 
 
-//UPDATE CAMPGROUND ROUTE
+
 router.put("/:id", middleware.checkCampgroundOwnership, upload.single('image'), function(req, res){
    Campground.findById(req.params.id, async function(err, updatedCampground){
         if(err){
@@ -216,14 +214,14 @@ router.put("/:id", middleware.checkCampgroundOwnership, upload.single('image'), 
 					return res.redirect("back");
 				}	
 				}
-		// update and save !
+		
 			
 			updatedCampground.city=req.body.campground.city;
 			updatedCampground.price=req.body.campground.price;
 			updatedCampground.name=req.body.campground.name;
 			updatedCampground.description=req.body.campground.description;
 			updatedCampground.save();
-            //redirect somewhere(showPage)
+           
 			req.flash("success",updatedCampground.name + " was Updated !");
             res.redirect("/campgrounds/" + req.params.id);
 		}
@@ -231,7 +229,7 @@ router.put("/:id", middleware.checkCampgroundOwnership, upload.single('image'), 
 });
 
 
-//DESTROY CAMPGROUND ROUTE
+
 router.delete("/:id", middleware.checkCampgroundOwnership, function(req, res){
     Campground.findById(req.params.id,async function(err,campground){
         if(err){
@@ -259,16 +257,16 @@ router.post("/:id/like", middleware.isLoggedIn, function (req, res) {
             return res.redirect("/campgrounds");
         }
 
-        // check if req.user._id exists in foundCampground.likes
+      
         var foundUserLike = foundCampground.likes.some(function (like) {
             return like.equals(req.user._id);
         });
 
         if (foundUserLike) {
-            // user already liked, removing like
+          
             foundCampground.likes.pull(req.user._id);
         } else {
-            // adding the new user like
+          
             foundCampground.likes.push(req.user);
         }
 
@@ -283,9 +281,6 @@ router.post("/:id/like", middleware.isLoggedIn, function (req, res) {
         });
     });
 });
-
-//middleWare
-
 
  module.exports = router;
 	
