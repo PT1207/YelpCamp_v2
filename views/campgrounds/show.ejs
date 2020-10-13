@@ -42,9 +42,9 @@
         </div>
     </form>
 </div>
-<!-- 		Like Logic  part 1 Ends!		 -->
+
 <div> 
-	<em style="font-size: 12px; color: gray;" >Submitted By <a 		 	href="/users/<%=campground.author.id%>"> <%= campground.author.username %> </a> <%=moment(campground.createdAt).fromNow()%></em>
+<em style="font-size: 12px; color: gray;" >Submitted By <a href="/users/<%=campground.author.id%>"> <%= campground.author.username %> </a> <%=moment(campground.createdAt).fromNow()%></em>
 </div>		
 				
      <% if(currentUser && campground.author.id.equals(currentUser._id) || currentUser && currentUser.isAdmin){%>
@@ -92,23 +92,22 @@
     </div>
 </div>
 
-<!-- Campground Likes Modal -->
+
 <div id="campgroundLikes" class="modal fade" role="dialog">
     <div class="modal-dialog">
-        <!-- Modal content-->
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h5 class="modal-title"> Likes: <%= campground.likes.length %></h5>
-            </div>
-            <div class="modal-body">
-                <table class="table table-striped">
-                    <thead>
-                    <tr>
-                        <th>Liked by:</th>
-                    </tr>
-                    </thead>
-                    <tbody>
+     		<div class="modal-content">
+			    <div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+				<h5 class="modal-title"> Likes: <%= campground.likes.length %></h5>
+			    </div>
+		<div class="modal-body">
+			<table class="table table-striped">
+			 <thead>
+				 <tr>
+				     <th>Liked by:</th>
+			    	</tr>
+                       </thead>
+                 <tbody>
                     <% campground.likes.forEach(function(like) { %>
                         <tr>
                             <td><span class="badge"><i class="fas fa-user"></i></span> <%= like.username %></td>
@@ -128,9 +127,6 @@
         </div>
     </div>
 </div>
-
-
-
 
 
 
