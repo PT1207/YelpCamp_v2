@@ -1,4 +1,4 @@
-//require("dotenv").config(); //for stripe payment-to save the secret key in a other file!!
+//require("dotenv").config();
 var express                = require("express");
 var  app                   = express();
  var   bodyParser          = require("body-parser");
@@ -42,7 +42,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.set("view engine", "ejs");
 app.use(methodOverride("_method"));
-app.use(flash()); //this is for the npm connect-flash! has to come before your passport authentif ! 
+app.use(flash()); 
 app.use(express.static( __dirname + "/public"));
 
 
