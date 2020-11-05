@@ -1,4 +1,17 @@
-Stack used: Html, Css(BootStrap 4.5), Javascript, Nodejs, express, noSql mongoDB atlas cloud.
-Included in my project:restful Routes-C.R.U.D. functionality ,user profile,Authentication vs Authorization,password-reset with nodemailer,weather Api,search box,image upload(cloudinary).
-Git used and deployed through Heroku.
+
+##Camping site webapp built by me.
+Js,css,Nodejs,Express,NoSql mongoDB.
+
+##Demo
+
+
+
+##Features
+-Restful Routes,
+-C.R.U.D. functionality ,
+-User profile
+-Authentication vs Authorization(Admin Role),
+-Nodemailer,
+-Weather Api,cloudinary for images,
+
 
