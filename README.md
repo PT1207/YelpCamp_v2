@@ -13,9 +13,9 @@ Js,css,Nodejs,Express,NoSql mongoDB.
 -C.R.U.D. functionality,
 -Rating system w comments,
 -User profile,
--Authentication(nodemailer) vs Authorization(Admin Role),
+-Auth(nodemailer) vs Authoriz.(Admin Role),
 -Nodemailer,
--Weather Api-cloudinary for images.
+-Weather Api-Cloudinary for images.
 
 # Done by completing The Web Developer Bootcamp by Colt Steele.
 
