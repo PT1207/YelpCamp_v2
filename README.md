@@ -1,19 +1,19 @@
-##My version of YelpCamp
-Campsite collection with rating and comments WEB APP
-##Full-Stack :
+## My YelpCamp_v2 :
+Campsite collection with ratings and comments from users- WEB APP!
+
+## Full-Stack :
 Js,css,Nodejs,Express,NoSql mongoDB.
 
 ## Demo Link :
  calm-retreat-71923.herokuapp.com
 
 
-
-##Features
+## Features :
 -Restful Routes,
--C.R.U.D. functionality ,
--Rating and comments,
+-C.R.U.D. functionality,
+-Rating system w comments,
 -User profile,
--Authentication vs Authorization(Admin Role),
+-Authentication(nodemailer) vs Authorization(Admin Role),
 -Nodemailer,
 -Weather Api,cloudinary for images,
 
