@@ -1,5 +1,5 @@
 ## My YelpCamp_v2 :
-Campsite collection with ratings and comments from users- WEB APP!
+Campground collection with ratings and comments from users- WEB APP!
 
 ## Full-Stack :
 Js,css,Nodejs,Express,NoSql mongoDB.
