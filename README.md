@@ -5,7 +5,7 @@ Campsite collection with ratings and comments from users- WEB APP!
 Js,css,Nodejs,Express,NoSql mongoDB.
 
 ## Demo Link :
- calm-retreat-71923.herokuapp.com
+ http://calm-retreat-71923.herokuapp.com
 
 
 ## Features :
@@ -17,6 +17,6 @@ Js,css,Nodejs,Express,NoSql mongoDB.
 -Nodemailer,
 -Weather Api-Cloudinary for images.
 
-# Done by completing The Web Developer Bootcamp by Colt Steele.
+## Done by completing The Web Developer Bootcamp by Colt Steele.
 
 
