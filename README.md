@@ -15,8 +15,8 @@ Js,css,Nodejs,Express,NoSql mongoDB.
 -User profile,
 -Authentication(nodemailer) vs Authorization(Admin Role),
 -Nodemailer,
--Weather Api,cloudinary for images,
+-Weather Api-cloudinary for images.
 
-Done by completing The Web Developer Bootcamp by Colt Steele.
-##
+# Done by completing The Web Developer Bootcamp by Colt Steele.
+
 
