@@ -2,7 +2,7 @@
 Campground collection with ratings and comments from users- WEB APP!
 
 ## Full-Stack :
-Js,css,Nodejs,Express,NoSql mongoDB.
+Html,Js,css,Nodejs,Express,NoSql mongoDB.
 
 ## Demo Link :
  http://calm-retreat-71923.herokuapp.com
